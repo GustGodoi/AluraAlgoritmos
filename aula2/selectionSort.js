@@ -4,6 +4,7 @@
 // Importando dados dos livros
 const livros = require("../aula1/listaLivros");
 const menorValor = require("../aula1/menorValor");
+const troca = require('../aula3/troca');
 
 // Utilizando um for clássico
 // for (let atual = 0; atual < livros.length - 1; atual++) {
@@ -21,15 +22,8 @@ const menorValor = require("../aula1/menorValor");
 // Utilizando o forEach
 livros.forEach((_, indice) => {
     let menor = menorValor(livros, indice);
-    let livroAtual = livros[indice];
 
-    console.log('posição atual', indice);
-    console.log('livro atual', livros[indice]);
-    let livroMenorPreco = livros[menor];
-    console.log('livro menor preço', livros[menor]);
-    
-    livros[indice] = livroMenorPreco;
-    livros[menor] = livroAtual;
+    troca(livros, menor);
 });
 
 console.log(livros);
